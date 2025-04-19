@@ -1,5 +1,9 @@
 <template>
-  <h1>Test</h1>
+  <div>
+    <main>
+      <slot />
+    </main>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
