@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-black: var(--black);
+  --color-mint: var(--mint);
+  --color-yellow: var(--yellow);
+  --color-orange: var(--orange);
+  --color-red: var(--red);
+}
+
+:root {
+  /* COLORS */
+  --black: #000000;
+  --mint: #6de1d2;
+  --yellow: #ffd63a;
+  --orange: #ffa955;
+  --red: #f75a5a;
+}
+
+.dark {
+}
+
+@layer base {
+  * {
+  }
+  body {
+    @apply bg-mint text-black;
+  }
+}
