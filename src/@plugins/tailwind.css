@@ -8,6 +8,10 @@
   --color-yellow: var(--yellow);
   --color-orange: var(--orange);
   --color-red: var(--red);
+  --spacing-vpad: var(--page-padding);
+  --container-vmax: var(--page-max);
+  --font-ubuntu: var(--ubuntu);
+  --font-patrick-hand: var(--patrick-hand);
 }
 
 :root {
@@ -17,6 +21,14 @@
   --yellow: #ffd63a;
   --orange: #ffa955;
   --red: #f75a5a;
+
+  /* SPACING */
+  --page-padding: 2rem;
+  --page-max: 1700px;
+
+  /* FONTS */
+  --ubuntu: "Ubuntu", sans-serif;
+  --patrick-hand: "Patrick Hand", cursive;
 }
 
 .dark {
@@ -26,6 +38,6 @@
   * {
   }
   body {
-    @apply bg-mint text-black;
+    @apply bg-yellow text-black;
   }
 }

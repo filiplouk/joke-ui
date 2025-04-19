@@ -1,7 +1,9 @@
 <template>
   <div>
-    <main>
-      <slot />
+    <main class="px-vpad py-vpad flex h-screen justify-center">
+      <div class="max-w-vmax w-full">
+        <slot />
+      </div>
     </main>
   </div>
 </template>
