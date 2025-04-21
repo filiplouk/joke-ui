@@ -8,6 +8,9 @@
   --color-yellow: var(--yellow);
   --color-orange: var(--orange);
   --color-red: var(--red);
+  --color-white: var(--white);
+  --color-grey: var(--grey);
+  --color-grey-light: var(--grey-light);
   --spacing-vpad: var(--page-padding);
   --container-vmax: var(--page-max);
   --font-ubuntu: var(--ubuntu);
@@ -19,9 +22,11 @@
   --black: #000000;
   --mint: #6de1d2;
   --yellow: #ffd63a;
+  --white: #fff;
   --orange: #ffa955;
   --red: #f75a5a;
-
+  --grey: #9aa6b2;
+  --grey-light: #efecec;
   /* SPACING */
   --page-padding: 2rem;
   --page-max: 1700px;
@@ -38,6 +43,6 @@
   * {
   }
   body {
-    @apply bg-yellow text-black;
+    @apply bg-yellow font-ubuntu text-black;
   }
 }

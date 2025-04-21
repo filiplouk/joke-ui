@@ -1,13 +1,13 @@
 import axiosInstance from "@/@libs/Axios/Axios";
-import type { JokeResponseDto } from "./@dtos/JokeResponse.dto";
+import type { Joke } from "./Joke.entity";
 
 export class JokeService {
-  static async getRandomJoke(): Promise<JokeResponseDto> {
-    const result = await axiosInstance.get("/random_joke");
+  static async getRandomJoke(): Promise<Joke[]> {
+    const result = await axiosInstance.get("/jokes/general/random");
     return result.data;
   }
-  static async getProgrammingJoke(): Promise<JokeResponseDto> {
-    const result = await axiosInstance.get("/programming_joke");
+  static async getProgrammingJoke(): Promise<Joke[]> {
+    const result = await axiosInstance.get("/jokes/programming/random");
     return result.data;
   }
 }
