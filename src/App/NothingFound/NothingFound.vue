@@ -1,4 +1,4 @@
-<template>404</template>
+<template>404 Nothing Found</template>
 
 <style lang="scss" scoped></style>
 

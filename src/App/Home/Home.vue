@@ -1,8 +1,8 @@
 <template>
-  <div class="flex min-h-100 flex-col items-center justify-between">
-    <div class="flex max-w-200 flex-col gap-8">
+  <div class="flex flex-col items-center justify-between gap-30">
+    <div class="flex min-h-65 max-w-150 flex-col gap-8">
       <h1 class="font-patrick-hand text-center text-5xl font-black">Joke of the day</h1>
-      <div class="flex justify-center gap-5">
+      <div class="flex flex-wrap justify-center gap-5">
         <Tab :active="activeTab === 1" @click="activeTab = 1">Random</Tab>
         <Tab :active="activeTab === 2" @click="activeTab = 2">Programming</Tab>
       </div>
@@ -34,8 +34,8 @@
         </div>
       </div>
     </div>
-    <div class="flex-flex-col gap-2">
-      <h2 class="text-xl font-bold">History</h2>
+    <div class="flex-flex-col w-full max-w-130">
+      <History />
     </div>
   </div>
 </template>
@@ -47,13 +47,17 @@ import { ref, onMounted, watch } from "vue";
 import { JokeService } from "@/@services/Joke/Joke.service";
 import Tab from "@/@components/Tab/Tab.vue";
 import Loader from "@/@components/Loader/Loader.vue";
+import History from "./History/History.vue";
 import type { Joke } from "@/@services/Joke/Joke.entity";
+import { useJokeListStore } from "@/@stores/joke.store.ts";
 
 const activeTab = ref<number>(1);
 const joke = ref<Joke | undefined>(undefined);
 const reveal = ref<boolean>(false);
 const loading = ref<boolean>(false);
 const error = ref<string>("");
+
+const jokeStore = useJokeListStore();
 
 const getJoke = async () => {
   loading.value = true;
@@ -79,6 +83,7 @@ onMounted(() => {
 
 const revealAnimation = () => {
   reveal.value = true;
+  joke.value && jokeStore.addJoke(joke.value);
 };
 
 watch(
